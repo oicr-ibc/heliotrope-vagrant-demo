@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
     v.memory = 2048
     v.cpus = 2
     v.customize ['storagectl', :id, "--name", "SATA Controller", '--hostiocache', 'off']
+    v.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
   end
 
   config.vm.provision "shell" do |shell|
